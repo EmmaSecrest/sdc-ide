@@ -96,8 +96,6 @@ export function Main() {
                                 saveQuestionnaireResponse={manager.setQuestionnaireResponse}
                                 launchContextParameters={launchContext.parameter}
                             />
-                            {console.log('Questionnaire Response:', questionnaireResponseRD)}
-                            {console.log(launchContext.parameter)}
                         </Cell>
                     </Allotment>
                     <Allotment>
