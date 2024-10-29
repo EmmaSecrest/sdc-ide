@@ -45,8 +45,10 @@ export function Main() {
                 <Allotment vertical>
                     <Allotment>
                         <Cell title="Launch Context">
-                            <RenderRemoteData remoteData={originalQuestionnaireRD}>
+                            {/* <RenderRemoteData remoteData={originalQuestionnaireRD}>
+                                
                                 {(resource) => (
+                                    
                                     <LaunchContextEditor
                                         questionnaire={resource}
                                         launchContext={launchContext}
@@ -54,6 +56,19 @@ export function Main() {
                                         onRemove={manager.clearLaunchContext}
                                     />
                                 )}
+                            </RenderRemoteData> */}
+                            <RenderRemoteData remoteData={originalQuestionnaireRD}>
+                                {(resource) => {
+                                    console.log('Rendered Resource:', resource);
+                                    return (
+                                        <LaunchContextEditor
+                                            questionnaire={resource}
+                                            launchContext={launchContext}
+                                            onChange={manager.setLaunchContext}
+                                            onRemove={manager.clearLaunchContext}
+                                        />
+                                    );
+                                }}
                             </RenderRemoteData>
                         </Cell>
                         <Cell title="Questionnaire FHIR Resource" even={true}>
@@ -81,6 +96,8 @@ export function Main() {
                                 saveQuestionnaireResponse={manager.setQuestionnaireResponse}
                                 launchContextParameters={launchContext.parameter}
                             />
+                            {console.log('Questionnaire Response:', questionnaireResponseRD)}
+                            {console.log(launchContext.parameter)}
                         </Cell>
                     </Allotment>
                     <Allotment>

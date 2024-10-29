@@ -115,7 +115,7 @@ export function QuestionnaireEditor(props: Props) {
                                         setShowSelect(true);
                                     }}
                                 >
-                                    clear
+                                    Clear Form
                                 </Button>
                                 <Button
                                     className={classNames(s.action, {

@@ -38,6 +38,7 @@ type FormValues = FormItems;
 export function BaseQuestionnaireResponseForm({ formData, onSubmit, readOnly, onChange }: Props) {
     const previousValues = useRef<FormValues | null>(null);
 
+    console.log('Form Data:', formData);
     const onFormChange = (values: FormValues) => {
         if (_.isEqual(values, previousValues.current)) {
             return;
